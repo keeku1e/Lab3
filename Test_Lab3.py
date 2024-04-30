@@ -11,6 +11,7 @@ def test_bubble_sort_ascending():
     result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
 
     assert (result == test_arr)
+    
 
 def test_bubble_sort_descending():
     result = []
@@ -28,3 +29,21 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+def test_bubble_sort_over():
+    input_arr = [64, 34, 25, 12, 22, 11, 90,1,1,1,1,1]
+    assert (Lab3.bubble_sort(input_arr, 1) == 1)
+    assert (Lab3.bubble_sort(input_arr, 0) == 1)
+
+def test_bubble_sort_empty():
+    input_arr = []
+    assert (Lab3.bubble_sort(input_arr, 1) == 0)
+    assert (Lab3.bubble_sort(input_arr, 0) == 0)
+
+def test_bubble_sort_err():
+    input_arr = ["sdffsdff",1,1,1,1]
+    input_arr1 = [1.23,1,1,1]
+    assert (Lab3.bubble_sort(input_arr, 1) == 2)
+    assert (Lab3.bubble_sort(input_arr1, 1) == 2)
+    assert (Lab3.bubble_sort(input_arr, 0) == 2)
+    assert (Lab3.bubble_sort(input_arr1, 0) == 2)
